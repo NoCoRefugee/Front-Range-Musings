@@ -30,16 +30,31 @@ float powerize( float powerThing ) {
 int main() {
 
 	float f1 = 1.0;
+	float holder = 1.0;
 	int ct1 = 0;
 
 	cout << "\n\n*******************************\n\n";
 
 	cout << "\nPowers headed toward 0^0\n";
 
-	for ( ct1 = 0; ct1 < 15; ct1 ++ ) {
-	
-		cout << setprecision(4) << setw(10) << "\n" << f1 << "^" << f1 << " => ";
-		cout << setprecision(10) << setw(10) << powerize(f1);
+	while ( f1 > 0 ) {
+		cout << fixed << "\n";
+
+		cout << setprecision(6) << f1 << "^" << f1 << " => ";
+		holder = powerize(f1);
+		cout << setprecision(10) << setw(20) << holder;
+		f1 = f1 - .05;
+	} 
+
+	cout << "\n------------------------------------------------\n";
+
+	f1 = .01;	
+	while ( f1 > 0.000000001 ) {
+		cout << fixed << "\n";
+
+		cout << setprecision(6) << f1 << "^" << f1 << " => ";
+		holder = powerize(f1);
+		cout << setprecision(10) << setw(20) << holder;
 		f1 = f1 / 10;
 	} 
 	
