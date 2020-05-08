@@ -1,0 +1,15 @@
+This is how to clean up files that used to be tracked but
+now you want to put them in .gitignore:
+
+1) add the file name to the .gitignore file
+
+2) remove everything from the cache => $ git rm -r -- cached . <filename>
+
+	=> I suspect this is wrong.  It works, but I suspect you can 
+	=> get rid of the . and just put the file name.  Try it sometime.
+
+3) Re add everything to cache with => $ git add .
+
+4) do a commit => $ git commit -m ".gitignore fix"
+
+
