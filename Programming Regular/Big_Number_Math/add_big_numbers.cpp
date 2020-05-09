@@ -40,13 +40,38 @@ void seedArray( int* passedArray ) {
 
 	passedArray[0] = 0;
 
+	for ( i=4; i>0; i-- ) {
+		
+		passedArray[i] = i;
+	} 
+
+/*
 	for ( i=arraySize-1; i>0; i-- ) {
 		
 		passedArray[i] = 3;
 	} 
-
+*/
 
 } // end of seedArray
+
+// ------------------------------------------------------------------------
+// This function adds two arrays together
+void addArrays( int* a1, int* a2, int* a3 ) {
+// 1. make a carry over part
+// 2. count the leading zeros so you don't have to add that part
+// 3. track if you are getting to array size limit, make error if last
+//	addition is going to roll over too far.
+
+	int i;
+
+	for ( i=arraySize-1; i>0; i-- ) {
+		a3[i] = a2[i] + a1[i];
+	}
+
+
+} // end of addArrays
+
+
 
 // ------------------------------------------------------------------------
 // This function prints out the array.  This is for testing only.
@@ -89,6 +114,8 @@ int main() {
 	makeLine();
 
 	seedArray( arr1 );
+	seedArray( arr2 );
+	addArrays(arr1, arr2, arr3);
 
 	showArray( arr1 );
 	showArray( arr2 );
