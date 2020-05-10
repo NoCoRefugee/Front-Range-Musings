@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 from decimal import *
-
+# I'm told the above line is bad practice
 
 # JLF  -  20200502
 
