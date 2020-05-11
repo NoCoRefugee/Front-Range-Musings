@@ -1,0 +1,41 @@
+[3J[H[2J
+-------------------------------------------------------------
+
+This function runs the 1/x + 1/(x+1), 1/(x+2)... 1/(+n) series.  Instead of printing out the
+running sum of this series we are counting the number of terms that start with each digit.
+So, there are three terms that start with a 1 ( 1, 1 1/2, 1 5/6... ) then seven that start with 
+a 2, and so on.
+
+The computer is currently running that series out to 5,000,000,000 terms.
+
+1s =>	3
+2s =>	7
+3s =>	20
+4s =>	52
+5s =>	144
+6s =>	389
+7s =>	1,058
+8s =>	2,876
+9s =>	7,817
+10s =>	21,250
+11s =>	57,763
+12s =>	157,017
+13s =>	426,817
+14s =>	1,160,207
+15s =>	3,153,770
+16s =>	8,572,836
+17s =>	23,303,385
+18s =>	63,345,169
+19s =>	172,190,019
+20s =>	468,061,001
+21s =>	1,272,321,714
+22s =>	2,987,216,685
+
+*The last number is almost certainly incomplete.
+
+The series sum at the end was =>  22.90991941417064
+and that is after 5,000,000,000 additions.
+This series grows infinitely, and slowely.
+
+-------------------------------------------------------------
+
