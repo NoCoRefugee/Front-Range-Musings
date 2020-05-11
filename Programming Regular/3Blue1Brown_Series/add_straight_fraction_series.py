@@ -19,7 +19,7 @@ def simplest_series():
 	series_sum = 0
 	sub_total_sum_so_far = 0	
 	counter1 = 2
-	upper_limit_1 = 5000000000	
+	upper_limit_1 = 5000	
 
 	print("This function runs the 1/x + 1/(x+1), 1/(x+2)... 1/(+n) series.  Instead of printing out the")
 	print("running sum of this series we are counting the number of terms that start with each digit.")
@@ -54,6 +54,8 @@ def simplest_series():
 	print("This series grows infinitely, and slowely.")
 #	print(f"double_checking => {double_checking:,}")
 
+	# later, have this thing return the something, so it can run through different
+	# size searches and maybe compare them to guess where the thing will flatten out
 
 def main():
 
