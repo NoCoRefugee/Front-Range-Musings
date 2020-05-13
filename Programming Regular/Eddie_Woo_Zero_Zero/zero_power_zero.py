@@ -24,24 +24,18 @@ def makeLine():
 
 # ------------------------------------------------------------------------------------------
 
-def doIt(int1):
-
-	decimal.getcontext().prec = 100
-
-	return decimal.Decimal(int1)*decimal.Decimal(int1)
-
-# ------------------------------------------------------------------------------------------
-
 def main():
 	makeLine()
 
 	print("what is the Limit as x -> 0 of x^x?")
 
-	decimal.Decimal(num) = decimal.Decimal(0.1)
-	for x in range(20):
-		print(doIt(decimal.Decimal(num)))
-		print("decimal.Decimal(num) => ", decimal.Decimal(num))
-		decimal.Decimal(num) = decimal.Decimal(num) / 10
+	decimal.getcontext().prec = 20 
+
+	num1 = decimal.Decimal(0.0000001)
+
+	print("num1 => ", num1)
+
+	print("0.0000001 => ", 0.0000001)
 
 	makeLine()
 
