@@ -5,7 +5,7 @@ using namespace std;
 // -------------------------------------------------------------------
 
 int theNumber = 5;
-int arraySize = 0;
+int arraySize = 20;
 
 // -------------------------------------------------------------------
 
@@ -31,6 +31,8 @@ int getArraySize(int* arrayOne) {
 void showArray(int* arrayOne) {
 	
 	int i;
+
+	cout << "\nWe are in show array\n";
 	
 	cout << endl;	
 
@@ -44,6 +46,16 @@ void showArray(int* arrayOne) {
 } // end of showArray
 
 // -------------------------------------------------------------------
+
+void multiplyArrayByTwo(int* arrayOne, int counter) {
+
+	int howManyIterations = counter + 2;	
+
+	arrayOne[1] = 5;
+	cout << "\ncounter => " << counter;
+	cout << "\nhowManyIterations => " << howManyIterations;
+
+}  // end of multiplyArrayByTwo 
 // -------------------------------------------------------------------
 // -------------------------------------------------------------------
 
@@ -52,13 +64,23 @@ void showArray(int* arrayOne) {
 int main() {
 	
 	int mersenneN = theNumber;  // this will be the n of 2^n-1
+	int numberSize = 0;
 	int numberholder[20] = {0};
 
 	cout << "\n----------------------------------------------------\n";
 	
 	initializeArray(numberholder);
 
-//	cout << "\nThe array is => " << showArray(numberholder);
+	cout << "\nThe array is => \n";
+
+	showArray(numberholder);
+
+	multiplyArrayByTwo(numberholder, numberSize);
+
+
+	cout << "\nThe array is => \n";
+
+	showArray(numberholder);
 
 	
 	cout << "\n----------------------------------------------------\n";
