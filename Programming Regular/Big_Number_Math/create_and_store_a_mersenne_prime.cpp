@@ -14,17 +14,6 @@ void initializeArray(int* arrayOne) {
 	arrayOne[0] = 2;
 
 } // end of initializeArray
-// -------------------------------------------------------------------
-
-int getArraySize(int* arrayOne) {
-
-	int i;
-	int sizeA = 0;
-	
-
-	return sizeA;
-
-} // end of getArraySize
 
 // -------------------------------------------------------------------
 
@@ -37,7 +26,7 @@ void showArray(int* arrayOne) {
 	cout << endl;	
 
 	for ( i=arraySize; i--; i>=0 ) {
-		cout << arrayOne[i];
+		cout << arrayOne[i] << ".";
 	}	
 
 	cout << endl;	
@@ -47,15 +36,28 @@ void showArray(int* arrayOne) {
 
 // -------------------------------------------------------------------
 
-void multiplyArrayByTwo(int* arrayOne, int counter) {
+void multiplyArrayByTwo(int* arrayOne, int arrayCurrentSize) {
 
-	int howManyIterations = counter + 2;	
+	int i = 0;
 
-	arrayOne[1] = 5;
-	cout << "\ncounter => " << counter;
-	cout << "\nhowManyIterations => " << howManyIterations;
+	while ( arrayCurrentSize >= i ) {
+
+		cout << "\narrayCurrentSize => " << arrayCurrentSize;
+		arrayOne[i] = arrayOne[i]*2;	
+		if ( arrayOne[i] > 9 ) {
+			arrayOne[i+1]++;
+			arrayOne[i] = arrayOne[i]%10;
+			if ( i >= arrayCurrentSize ) { arrayCurrentSize++; }
+		} // end of if...	
+		i++;
+		cout << "\ni => " << i;
+
+	} // end of while...
+
+	showArray(arrayOne);
 
 }  // end of multiplyArrayByTwo 
+
 // -------------------------------------------------------------------
 // -------------------------------------------------------------------
 
@@ -64,23 +66,16 @@ void multiplyArrayByTwo(int* arrayOne, int counter) {
 int main() {
 	
 	int mersenneN = theNumber;  // this will be the n of 2^n-1
-	int numberSize = 0;
-	int numberholder[20] = {0};
+	int arrayCurrentSize = 1;
+	int numberholder[arraySize] = {0};
 
 	cout << "\n----------------------------------------------------\n";
 	
 	initializeArray(numberholder);
 
-	cout << "\nThe array is => \n";
-
-	showArray(numberholder);
-
-	multiplyArrayByTwo(numberholder, numberSize);
-
-
-	cout << "\nThe array is => \n";
-
-	showArray(numberholder);
+	for ( int i=0; i<theNumber; i++ ) {
+		multiplyArrayByTwo(numberholder, arrayCurrentSize);
+	} // end of for...
 
 	
 	cout << "\n----------------------------------------------------\n";
