@@ -33,7 +33,7 @@ int main() {
 
 	array[0] = 2;
 	showArray(array, currentSize);
-
+// you need to make a seperate "multiply once by 2" function
 	while ( i<=numberN ) {
 		cout << "\nIn the loop";
 		array[i] = array[i] + carryOver;
