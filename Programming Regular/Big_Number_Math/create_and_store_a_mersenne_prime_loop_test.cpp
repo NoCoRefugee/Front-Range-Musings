@@ -23,26 +23,17 @@ void multiplyArrayByTwo(int* array, int currentSize) {
 
 	
 	int carryOver = 0;
-	int numberN = 5;
 	int i = 0;
 
-	for ( i=0; i<=currentSize; i++ ) {
-		array[i] = array[i] + carryOver;
+	for ( i=0; i<6; i++ ) {
 		array[i] = array[i] * 2;
-		cout << "\ncarryOver => " << carryOver;
+		array[i] = array[i] + carryOver;
 		if ( array[i] > 9 ) {
-			cout << "\ngreater than 9";
 			carryOver = 1;
-			array[i+1] = array[i+1] + carryOver;
-			array[i+5] = 8;
 			array[i] = array[i]%10;
-			if ( i > currentSize ) { currentSize++; } 
-		} // end of if
-		i++;
+		} 
+		else { carryOver = 0; }
 
-		cout << "\ncurrentSize => " << currentSize;
-		cout << "\ncarryOver => " << carryOver << endl;
-		
 	} // end of for 
 
 } // end of multiplyArrayByTwo
@@ -63,11 +54,10 @@ int main() {
 
 	cout << "\n------------------------";
 	for ( int i=0; i<9; i++ ) {
-		showArray(array, currentSize);
 		multiplyArrayByTwo(array, currentSize);
+		showArray(array, currentSize);
 	}
 	cout << "\n------------------------";
-
 
 	cout << "\n----------------------------------------\n";
 
