@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+int testNumber = 110503;
+int arraySize  = 100000;
+
 // -------------------------------------------------------------------------------
 
 void showArray(int* array, int currentSize) {
@@ -44,9 +47,9 @@ void multiplyArrayByTwo(int* array, int& currentSize) {
 int main() {
 
 
-	int array[2000] = {0};
+	int array[arraySize] = {0};
 	int currentSize = 0;
-	int numberN = 4000;
+	int numberN = testNumber;
 
 	cout << "\n----------------------------------------\n";
 
