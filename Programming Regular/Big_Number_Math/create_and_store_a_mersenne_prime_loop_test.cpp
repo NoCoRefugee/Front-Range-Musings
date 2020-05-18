@@ -5,32 +5,33 @@ using namespace std;
 
 void showArray(int* array, int currentSize) {
 
-	cout << "\narray => ";
-	for ( int i=19; i>=0; i-- ) {
-		cout << array[i] << ".";
-	} // end of for
-/*
-	cout << "\narray => ";
+	int counter1 = 0;
+
+	cout << "\n";
+
 	for ( int i=currentSize; i>=0; i-- ) {
-		cout << array[i] << ".";
+		cout << array[i];
+		counter1++;
 	} // end of for
-*/
+
 } // end of showArray
 
 // -------------------------------------------------------------------------------
 
-void multiplyArrayByTwo(int* array, int currentSize) {
+void multiplyArrayByTwo(int* array, int& currentSize) {
 
 	
 	int carryOver = 0;
 	int i = 0;
 
-	for ( i=0; i<6; i++ ) {
+//	for ( i=0; i<=10; i++ ) {
+	for ( i=0; i<=currentSize; i++ ) {
 		array[i] = array[i] * 2;
 		array[i] = array[i] + carryOver;
 		if ( array[i] > 9 ) {
 			carryOver = 1;
 			array[i] = array[i]%10;
+			if ( i >= currentSize ) { currentSize++; }
 		} 
 		else { carryOver = 0; }
 
@@ -43,21 +44,21 @@ void multiplyArrayByTwo(int* array, int currentSize) {
 int main() {
 
 
-	int array[20] = {0};
-	int currentSize = 1;
+	int array[2000] = {0};
+	int currentSize = 0;
+	int numberN = 4000;
 
 	cout << "\n----------------------------------------\n";
 
-	showArray(array, currentSize);
-
 	array[0] = 2;
 
-	cout << "\n------------------------";
-	for ( int i=0; i<9; i++ ) {
+	for ( int i=0; i<numberN-1; i++ ) {
 		multiplyArrayByTwo(array, currentSize);
-		showArray(array, currentSize);
 	}
-	cout << "\n------------------------";
+
+	cout << "\nMersenne ( 2^" << numberN << " - 1 ) makes => \n";
+	array[0]--;
+	showArray(array, currentSize);
 
 	cout << "\n----------------------------------------\n";
 
