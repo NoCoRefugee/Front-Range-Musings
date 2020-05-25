@@ -1,28 +1,46 @@
 #!/usr/bin/env Python3
 from PIL import Image
 
+def go_get_the_image_and_load_it_in_the_array( theArray = [], *args ):
 
-print("\n-------------------\n")
+	with Image.open('pic1.jpg') as img1:
+		img1.save('an_other_one.png')
 
-print("\nWhat the fuck?!, python?")
+	width, height = img1.size
+	
+	print("height => ", height)
+	print("width => ", width)
 
-img1 = Image.open("pic1.jpg")
+	print("1st pixel => ", img1.getpixel((0,0)))
 
-print("img1.size => ", img1.size)
-croppedIm = img1.crop((50, 260, 340, 650))
-croppedIm.save('cropped.png')
+	print("last pixel => ", img1.getpixel((width-1, height-1)))
 
-print("getpixel => ", img1.getpixel((0, 0)))
+	
+	for x in range(width-1):
+		for y in range(height-1):
+			if ( x<4 and y<4 ) or ( x>width-5 and y>height-5 ):
+				holder = img1.getpixel((x,y)) 
+				print(holder),
+#			if ( holder == (242, 241, 249) ):
+			if ( y<10 ):
+				img1.putpixel((x,y), ( 153, 0, 153))
+
+	img1.save('an_other_one.png')
 
 
-for x in range(100):
-	for y in range(100):
-		croppedIm.putpixel((x, y), (0, 0, 0))
-
-croppedIm.save('putpixeled.png')
 
 
+def main():
 
+	thePicture = []
 
-print("\n-------------------\n")
+	print("\n-------------------\n")
+
+	go_get_the_image_and_load_it_in_the_array(thePicture)
+
+	print("\n-------------------\n")
+
+if __name__ == "__main__":
+	main()
+
 
