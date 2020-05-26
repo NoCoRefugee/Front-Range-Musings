@@ -30,7 +30,8 @@ def go_get_the_image_and_load_it_into_the_array(the_name_of_the_picture_file):
 		theArray = [[0 for i in range(height)] for j in range(width)]
 
 
-		# get the image size in this variable to make it easier to return out of the function
+		# get the image size in this variable to make 
+		# it easier to return out of the function
 		pictureSize = img1.size
 
 		# This double loop gets the pixel info from the picture and
