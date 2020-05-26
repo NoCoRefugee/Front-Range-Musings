@@ -3,67 +3,77 @@ from PIL import Image
 
 # -----------------------------------------------------------------------
 
-def get_the_picture_size( pictureSize ):
+def go_get_the_image_and_load_it_into_the_array(the_name_of_the_picture_file):
 
-	print("inside pictureSize")
-	return pictureSize
+# 	This function loads an image from a file and returns the size of that
+#	image and an array with that image's pixel data.
 
-# -----------------------------------------------------------------------
+#	This function needs these external variables to exist:
+#		thePictureArray = [list]
+#		pictureSize = [list] 
+#		the_name_of_the_picture_file = "file name string"
 
-def go_get_the_image_and_load_it_into_the_array( theArray = [], *args):
+#	jlf  -  20200525
 
+
+	theArray = []
+
+	# show_progress_on_screen is just for trouble shooting, remove later
 	show_progress_on_screen = False
 
-	with Image.open('pic1.jpg') as img1:
-
+	# open file and create image object:, and then do the stuff with it
+	with Image.open(the_name_of_the_picture_file) as img1:
+		
+		# get the width and height of the image in the image object
 		width, height = img1.size
+		
+		# get the image size in this variable to make it easier to return out of the function
+		pictureSize = img1.size
 
-		randomSize = img1.size
-		get_the_picture_size( randomSize )	
-
+		# show_progress_on_screen is just for trouble shooting, remove later
 		if ( show_progress_on_screen ):	
 			print("height => ", height)
 			print("width => ", width)
-
 			print("1st pixel => ", img1.getpixel((0,0)))
-
 			print("last pixel => ", img1.getpixel((width-1, height-1)))
 
-		
+
+		# This double loop gets the pixel info from the picture and
+		# puts it in the array	
 		for x in range(width-1):
 			for y in range(height-1):
+				theArray.append(img1.getpixel((x,y))) 
+
+				# show_progress_on_screen is just for trouble shooting, remove later.
+				# These "if" statements print out first and last part of theArray
+				# for trouble shooting.
 				if ( x<4 and y<4 ) or ( x>width-5 and y>height-5 ):
 					if ( show_progress_on_screen ):	
 						if ( x==0 ) and ( y==0 ):
 							print()
 						if ( x==width-4 ) and ( y==height-4 ):
 							print()
-				holder = img1.getpixel((x,y)) 
-				theArray.append(holder)
-				if ( show_progress_on_screen ):	
-					print(holder),
 
-	img1.save('and_other_one.png')
-	
-	return pictureSize
+	return pictureSize, theArray
 
 # -----------------------------------------------------------------------
 
 def main():
 
-	thePicture = []
-	PictureSize = (0, 0)
+	thePictureArray = []
+	pictureSize = [] 
+	the_name_of_the_picture_file = "pic2.png"
 
 	print("\n-------------------\n")
 
-	print(f"thePicture size at the start => {len(thePicture)}")
-	print(f"PictureSize => {PictureSize}")
+	print(f"thePictureArray size at the start => {len(thePictureArray)} array objects")
+	print(f"pictureSize => {pictureSize} pixels")
 	
-	go_get_the_image_and_load_it_into_the_array(thePicture) 
+	pictureSize, thePictureArray = go_get_the_image_and_load_it_into_the_array(the_name_of_the_picture_file)
 	
 
-	print(f"thePicture size at the end   => {len(thePicture)}")
-	print(f"PictureSize => {PictureSize}")
+	print(f"thePictureArray size at the end   => {len(thePictureArray)} array objects")
+	print(f"pictureSize => {pictureSize} pixels")
 
 	print("\n-------------------\n")
 
