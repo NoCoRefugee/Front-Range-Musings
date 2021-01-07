@@ -13,3 +13,17 @@ header {
   margin: 0;
   padding: 0;
 }
+
+li {
+      color: darkblue;
+}
+
+ul {
+      color: darkblue;
+}
+
+.body_style {
+      width: 75%;
+      margin: auto;
+}
+

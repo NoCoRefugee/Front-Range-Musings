@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+      
+<html lang="en" dir="ltr">
+      <head>
+            <met charset="utf-8">
+            <link rel="stylesheet" href="style.css">
+            <title>VIM movements</title>
+      </head>
+
+      <body class="body_style">
+
+      <h1>VIM Cursor Movements</h1>
+      <h1>VIM Cursor Movements</h1>
+
+
+      <ul>
+            <li>h ..  move one character left</li>
+            <li>j ..  move one row down</li>
+            <li>k ..  move one row up</li>
+            <li>l ..  move one character right</li>
+            <li>w ..  move to beginning of next word</li>
+            <li>b ..  move to previous beginning of word</li>
+            <li>e ..  move to end of word</li>
+            <li>W ..  move to beginning of next word after a whitespace</li>
+            <li>B ..  move to beginning of previous word before a whitespace</li>
+            <li>E ..  move to end of word before a whitespace</li>
+      </ul>
+
+      <ul>
+            <li>All the above movements can be preceded by a count; e.g. 4j moves down 4 lines.</li>
+      </ul>
+
+      <ul>
+            <li>0 ..  move to beginning of line</li>
+            <li>$ ..  move to end of line</li>
+            <li>_ ..  move to first non-blank character of the line</li>
+            <li>g_ .. move to last non-blank character of the line</li>
+      </ul>
+
+      <ul>
+            <li>gg  move to first line</li>
+            <li>G   move to last line</li>
+      </ul>
+
+      <ul>     
+            <li>ngg move to n'th line of file (n is a number; 12gg moves to line 12)</li>
+            <li>nG  move to n'th line of file (n is a number; 12G moves to line 12)</li>
+      </ul>
+
+      <ul>
+            <li>H   move to top of screen</li>
+            <li>M   move to middle of screen</li>
+            <li>L   move to bottom of screen</li>
+      </ul>
+
+      <ul>
+            <li>zz  scroll the line with the cursor to the center of the screen</li>
+            <li>zt  scroll the line with the cursor to the top</li>
+            <li>zb  scroll the line with the cursor to the bottom</li>
+      </ul>
+
+      <ul>
+            <li>Ctrl-D  move half-page down</li>
+            <li>Ctrl-U  move half-page up</li>
+            <li>Ctrl-B  page up</li>
+            <li>Ctrl-F  page down</li>
+            <li>Ctrl-O  jump to last (older) cursor position</li>
+            <li>Ctrl-I  jump to next cursor position (after Ctrl-O)</li>
+            <li>Ctrl-Y  move view pane up</li>
+            <li>Ctrl-E  move view pane down</li>
+      </ul>
+
+      <ul>
+            <li>n   next matching search pattern</li>
+            <li>N   previous matching search pattern</li>
+            <li>*   next whole word under cursor</li>
+            <li>#   previous whole word under cursor</li>
+            <li>g*  next matching search (not whole word) pattern under cursor</li>
+            <li>g#  previous matching search (not whole word) pattern under cursor</li>
+            <li>gd  go to definition/first occurrence of the word under cursor</li>
+      </ul>
+
+      <ul>
+            <li>%   jump to matching bracket { } [ ] ( )</li>
+      </ul>
+
+      <ul>
+            <li>fX  to next 'X' after cursor, in the same line (X is any character)</li>
+            <li>FX  to previous 'X' before cursor (f and F put the cursor on X)</li>
+            <li>tX  til next 'X' (similar to above, but cursor is before X)</li>
+            <li>TX  til previous 'X'</li>
+            <li>;   repeat above, in same direction</li>
+            <li>,   repeat above, in reverse direction</li>
+      </ul>
+
+      </body>
+</html>
